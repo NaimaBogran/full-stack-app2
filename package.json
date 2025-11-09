@@ -1,0 +1,32 @@
+{
+  "name": "full-stack-app2",
+  "version": "1.0.0",
+  "description": "Monologue Library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NaimaBogran/full-stack-app2.git"
+  },
+  "author": "naima",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NaimaBogran/full-stack-app2/issues"
+  },
+  "homepage": "https://github.com/NaimaBogran/full-stack-app2#readme",
+  "dependencies": {
+    "bcrypt-nodejs": "^0.0.3",
+    "body-parser": "^2.2.0",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.7",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-session": "^1.18.2",
+    "mongoose": "^8.19.3",
+    "morgan": "^1.10.1",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0"
+  }
+}

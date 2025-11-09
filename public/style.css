@@ -1,0 +1,300 @@
+/******************************************
+/* MONOLOGUE LIBRARY
+/*******************************************/
+
+/* Base Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: 'Poppins', 'Inter', sans-serif;
+  color: #1a1a1a;
+  background: linear-gradient(135deg, #fff7e6 0%, #f5e0ff 50%, #e3f6ff 100%);
+  overflow-x: hidden;
+}
+
+/******************************************
+/* GENERAL 
+/*******************************************/
+
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+
+p {
+  color: #333;
+}
+
+/******************************************
+/* BUTTONS
+/*******************************************/
+
+.btn {
+  border-radius: 30px;
+  padding: 10px 22px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #9333ea, #f59e0b);
+  color: white;
+  box-shadow: 0 5px 15px rgba(147, 51, 234, 0.3);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #7e22ce, #ea580c);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(147, 51, 234, 0.4);
+}
+
+.btn-default {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: #3b0764;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.btn-default:hover {
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-1px);
+}
+
+/******************************************
+/* LANDING PAGE
+/*******************************************/
+
+.jumbotron {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(10px);
+  padding: 50px 60px;
+  border-radius: 24px;
+  margin-top: 70px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.jumbotron h1 {
+  font-size: 38px;
+  background: linear-gradient(90deg, #a855f7, #f59e0b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 15px;
+}
+
+.jumbotron p {
+  color: #4b5563;
+  font-size: 16px;
+  margin-bottom: 25px;
+}
+
+/******************************************
+/* AUTH FORMS
+/*******************************************/
+
+.col-sm-6.col-sm-offset-3 {
+  margin-top: 60px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+}
+
+.col-sm-6.col-sm-offset-3 h1 {
+  color: #6d28d9;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-control {
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  padding: 10px 14px;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #9333ea;
+  box-shadow: 0 0 5px rgba(147, 51, 234, 0.3);
+}
+
+/******************************************
+/* PROFILE PAGE HEADER
+/*******************************************/
+
+.page-header {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 25px;
+}
+
+.page-header h1 {
+  font-size: 36px;
+  background: linear-gradient(90deg, #ec4899, #a855f7, #f59e0b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.page-header p {
+  color: #4b5563;
+}
+
+/******************************************
+/* SIDEBAR CARDS
+/*******************************************/
+
+.well {
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 10px 25px rgba(147, 51, 234, 0.1);
+}
+
+.well h3, .well h4 {
+  color: #7c3aed;
+}
+
+.helper-text, .helper-list {
+  color: #374151;
+  font-size: 14px;
+}
+
+/******************************************
+/* MONOLOGUE CARDS
+/*******************************************/
+
+.messages {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-left: 0;
+  margin-top: 20px;
+}
+
+.message {
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.85), rgba(236, 254, 255, 0.8));
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  padding: 16px 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.message:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 36px rgba(147, 51, 234, 0.15);
+}
+
+.message span:nth-child(1) {
+  font-weight: 600;
+  color: #7e22ce;
+  font-size: 15px;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.message span:nth-child(2) {
+  display: block;
+  color: #111827;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+.message span:nth-child(3) {
+  display: none;
+}
+
+/******************************************
+/* ICONS
+/*******************************************/
+
+.message span:nth-child(4),
+.message span:nth-child(5),
+.message span:nth-child(6) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 6px;
+}
+
+.message .fa {
+  font-size: 16px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.message .fa-thumbs-up {
+  color: #10b981;
+}
+
+.message .fa-thumbs-down {
+  color: #ef4444;
+}
+
+.message .fa-trash {
+  color: #6b7280;
+}
+
+.message .fa:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 10px rgba(236, 72, 153, 0.3);
+}
+
+/******************************************
+/* ADD MONOLOGUE FORM
+/*******************************************/
+
+.add-monologue-form textarea {
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  padding: 10px 14px;
+  font-size: 14px;
+  resize: vertical;
+}
+
+.add-monologue-form textarea:focus {
+  outline: none;
+  border-color: #a855f7;
+  box-shadow: 0 0 5px rgba(168, 85, 247, 0.4);
+}
+
+/******************************************
+/* RESPONSIVE
+/*******************************************/
+
+@media (max-width: 768px) {
+  .jumbotron {
+    padding: 40px 30px;
+  }
+
+  .page-header h1 {
+    font-size: 28px;
+  }
+
+  .message {
+    padding: 14px;
+  }
+
+  .col-sm-6.col-sm-offset-3 {
+    padding: 25px;
+  }
+}

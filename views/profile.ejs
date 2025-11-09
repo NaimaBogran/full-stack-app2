@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+  <title>Monologue Library</title>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="container">
+
+  <div class="page-header text-center">
+    <h1>Monologue Library</h1>
+    <p>Welcome, <strong><%= user.local.email %></strong></p>
+    <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+  </div>
+
+  <div class="row">
+
+    <div class="col-sm-6">
+      <div class="well">
+        <h3><span class="fa fa-user"></span> Your Account</h3>
+
+        <% if (user.local.email) { %>
+          <p>
+            <strong>Email</strong>: <%= user.local.email %><br>
+          </p>
+
+          <p class="helper-text">
+            Use this account to save, share, and discover monologues for auditions and class.
+          </p>
+
+          <a href="/unlink/local" class="btn btn-default">Unlink</a>
+        <% } else { %>
+          <a href="/connect/local" class="btn btn-default">Connect Local</a>
+        <% } %>
+
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <h3>Community Monologues</h3>
+      <ul class="messages">
+        <% for(var i=0; i<messages.length; i++) { %>
+          <li class="message">
+            <!-- Order matters for main.js -->
+            <span><%= messages[i].name %></span>
+            <span><%= messages[i].msg %></span>
+            <span><%= messages[i].thumbUp %></span>
+            <span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
+            <span><i class="fa fa-thumbs-down" aria-hidden="true"></i></span>
+            <span><i class="fa fa-trash" aria-hidden="true"></i></span>
+          </li>
+        <% } %>
+      </ul>
+
+      <h2>Add a Monologue</h2>
+      <% if (user.local.email) { %>
+        <form action="/messages" method="POST">
+          <input type="text" value="<%= user.local.email %>" name="name" class="form-control" readonly>
+          <br>
+          <textarea
+            class="form-control"
+            placeholder="Example: &quot;The Wolves&quot; – #11’s speech, contemporary, late teens. Great for college auditions..."
+            name="msg"
+            rows="3"
+          ></textarea>
+          <br>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      <% } %>
+    </div>
+
+  </div>
+
+</div>
+
+<script src="/main.js"></script>
+
+</body>
+</html>
