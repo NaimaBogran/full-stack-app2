@@ -3,6 +3,7 @@
 // set up ======================================================================
 // get all the tools we need
 var express  = require('express');
+require('dotenv').config(); // add this so .env works locally
 var app      = express();
 var port     = process.env.PORT || 8080;
 
@@ -17,7 +18,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser   = require('body-parser');
 var session      = require('express-session');
 
-var configDB = require('./config/database.js');
+var configDB = require('./config/database.js'); // still fine to keep
 
 // set up our express application =============================================
 app.use(morgan('dev')); // log every request to the console
@@ -39,7 +40,14 @@ app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
 
 // database + routes + launch ==================================================
-mongoose.connect(configDB.url)
+const mongoURI = process.env.MONGODB_URI || configDB.url; // 👈 prefer env on Render
+
+if (!mongoURI) {
+  console.error('No MongoDB URI set.');
+  process.exit(1);
+}
+
+mongoose.connect(mongoURI)
   .then(() => {
     console.log('Connected to MongoDB');
 
