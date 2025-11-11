@@ -40,10 +40,14 @@ app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
 
 // database + routes + launch ==================================================
-const mongoURI = process.env.MONGODB_URI || configDB.url; // 👈 prefer env on Render
+require('dotenv').config();
+var configDB = require('./config/database.js');
+
+// prefer the environment variable on Render, fallback to local config
+const mongoURI = process.env.MONGODB_URI || configDB.url;
 
 if (!mongoURI) {
-  console.error('No MongoDB URI set.');
+  console.error('No MongoDB URI set. Set MONGODB_URI or check configDB.url.');
   process.exit(1);
 }
 
@@ -51,7 +55,6 @@ mongoose.connect(mongoURI)
   .then(() => {
     console.log('Connected to MongoDB');
 
-    // use the same connection for routes (for db.collection(...))
     const db = mongoose.connection.db;
 
     // configure passport (loads User model, etc.)
