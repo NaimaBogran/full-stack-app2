@@ -11,6 +11,9 @@
 
 The app blends **community-driven discovery** with a clean, creative UI — built with Node.js, Express, Passport authentication, and MongoDB. Users can log in, post their favorite monologues, upvote others, and curate their personal library of go-to audition material.
 
+
+<img width="1719" height="812" alt="image" src="views/img/readme-img.png" />
+
 ---
 
 ## ✨ Features
